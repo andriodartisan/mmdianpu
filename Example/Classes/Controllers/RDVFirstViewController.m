@@ -26,6 +26,7 @@
 #import "RDVTabBarItem.h"
 #import "ILBarButtonItem.h"
 
+#import "RDVGoodsTableViewCell.h"
 #import "SubCateViewController.h"
 
 @interface RDVFirstViewController ()
@@ -61,7 +62,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
     [[self rdv_tabBarItem] setBadgeValue:@"3"];
     
@@ -104,6 +104,8 @@
     self.navigationController.navigationBar.backgroundColor  = [UIColor colorWithRed:242.0f/255.0f green:141.0f/255.0f blue:114.0f/255.0f alpha:1];
     
     NSLog(@" bar tint color %@",self.navigationController.navigationBar.barTintColor);
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 
@@ -154,11 +156,12 @@
     UIView *lineY2 = [[UIView alloc] initWithFrame:CGRectMake(320/3 + 1 + 320/3, 0, 1, btnY)];
     lineY2.backgroundColor = [UIColor greenColor];
     [_typesView addSubview:lineY2];
-
-    [self.view addSubview:_typesView];
     
     CGRect frame = [self.view convertRect:self.view.bounds toView:nil];
     CGRect mainframe = [[UIScreen mainScreen] applicationFrame];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:_typesView];
+    _typesView.frame = CGRectMake(0, frame.origin.y, frame.size.width, btnY);
     
     NSLog(@"fram X = %f Y = %f width = %f height = %f ",frame.origin.x,frame.origin.y,frame.size.width,frame.size.height);
     NSLog(@"mainframe X = %f Y = %f width = %f height = %f ",mainframe.origin.x,mainframe.origin.y,mainframe.size.width,mainframe.size.height);
@@ -228,18 +231,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    RDVGoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[RDVGoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    [self configureCell:cell forIndexPath:indexPath];
-    
+//    [self configureCell:cell forIndexPath:indexPath];
+    cell.rightLable.text = cell.leftLable.text = self.title;
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 30;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 200;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -253,6 +253,9 @@
 		8E029592199C842A0058A010 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E029591199C842A0058A010 /* QuartzCore.framework */; };
 		8E029718199CB3730058A010 /* fragment_left_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E029716199CB3730058A010 /* fragment_left_default.png */; };
 		8E029719199CB3730058A010 /* fragment_left_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E029717199CB3730058A010 /* fragment_left_default@2x.png */; };
+		8EAD9924199DB6760084943C /* RDVGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD9923199DB6760084943C /* RDVGoodsTableViewCell.m */; };
+		8EAD9926199DBD4A0084943C /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD9925199DBD4A0084943C /* background1.png */; };
+		8EAD9929199DE4940084943C /* RDVRecommendGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD9928199DE4940084943C /* RDVRecommendGoodsTableViewCell.m */; };
 		8EFD5F6A199B736900AC2017 /* RDVFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD5F69199B736900AC2017 /* RDVFourViewController.m */; };
 		8EFD5F6F199B75C100AC2017 /* ILBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD5F6E199B75C100AC2017 /* ILBarButtonItem.m */; };
 		B407B65B182CCA01006F21A6 /* navigationbar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B407B659182CCA01006F21A6 /* navigationbar_background.png */; };
@@ -505,6 +508,11 @@
 		8E029591199C842A0058A010 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8E029716199CB3730058A010 /* fragment_left_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fragment_left_default.png; sourceTree = "<group>"; };
 		8E029717199CB3730058A010 /* fragment_left_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fragment_left_default@2x.png"; sourceTree = "<group>"; };
+		8EAD9922199DB6760084943C /* RDVGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVGoodsTableViewCell.h; sourceTree = "<group>"; };
+		8EAD9923199DB6760084943C /* RDVGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVGoodsTableViewCell.m; sourceTree = "<group>"; };
+		8EAD9925199DBD4A0084943C /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = FolderImages/background1.png; sourceTree = "<group>"; };
+		8EAD9927199DE4940084943C /* RDVRecommendGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVRecommendGoodsTableViewCell.h; sourceTree = "<group>"; };
+		8EAD9928199DE4940084943C /* RDVRecommendGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVRecommendGoodsTableViewCell.m; sourceTree = "<group>"; };
 		8EFD5F68199B736900AC2017 /* RDVFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVFourViewController.h; sourceTree = "<group>"; };
 		8EFD5F69199B736900AC2017 /* RDVFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVFourViewController.m; sourceTree = "<group>"; };
 		8EFD5F6D199B75C100AC2017 /* ILBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarButtonItem.h; sourceTree = "<group>"; };
@@ -791,6 +799,17 @@
 			path = Images/FolderImages;
 			sourceTree = "<group>";
 		};
+		8EAD9921199DB5BE0084943C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8EAD9922199DB6760084943C /* RDVGoodsTableViewCell.h */,
+				8EAD9923199DB6760084943C /* RDVGoodsTableViewCell.m */,
+				8EAD9927199DE4940084943C /* RDVRecommendGoodsTableViewCell.h */,
+				8EAD9928199DE4940084943C /* RDVRecommendGoodsTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8EFD5F6B199B75C100AC2017 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +833,7 @@
 		B435F53D1739811F00297C82 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8EAD9925199DBD4A0084943C /* background1.png */,
 				B44008D8180B11A500D8CB89 /* first_normal.png */,
 				B44008D9180B11A500D8CB89 /* first_normal@2x.png */,
 				B44008DA180B11A500D8CB89 /* first_selected.png */,
@@ -897,6 +917,7 @@
 		B4616C071722995D00863892 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8EAD9921199DB5BE0084943C /* Cell */,
 				8EFD5F6B199B75C100AC2017 /* Vender */,
 				B4616C081722995D00863892 /* App Delegate */,
 				B4616C0B1722995D00863892 /* Controllers */,
@@ -1124,6 +1145,7 @@
 				8E0294EC199C6ACC0058A010 /* jewelry_glasses.png in Resources */,
 				8E029565199C6ACC0058A010 /* tmall_icon_cat_furniture_7.png in Resources */,
 				8E029501199C6ACC0058A010 /* tmall_icon_cart_blank.png in Resources */,
+				8EAD9926199DBD4A0084943C /* background1.png in Resources */,
 				8E02955C199C6ACC0058A010 /* tmall_icon_cat_furniture.png in Resources */,
 				8E029517199C6ACC0058A010 /* tmall_icon_cat_bag_5.png in Resources */,
 				8E02956C199C6ACC0058A010 /* tmall_icon_cat_mcloth@2x.png in Resources */,
@@ -1288,6 +1310,7 @@
 				8E0293EF199C54A60058A010 /* Default.png in Sources */,
 				8E0293F0199C54A60058A010 /* Default@2x.png in Sources */,
 				8E0293F1199C54A60058A010 /* RDVTabBarController-Info.plist in Sources */,
+				8EAD9924199DB6760084943C /* RDVGoodsTableViewCell.m in Sources */,
 				8E0293F2199C54A60058A010 /* RDVTabBarController-Prefix.pch in Sources */,
 				8E0293F3199C54A60058A010 /* UIKit.framework in Sources */,
 				8E0293F4199C54A60058A010 /* Foundation.framework in Sources */,
@@ -1301,6 +1324,7 @@
 				B49817A917229CBC00AD294C /* RDVTabBarController.m in Sources */,
 				B465733A1725A23D00319236 /* RDVFirstViewController.m in Sources */,
 				8EFD5F6A199B736900AC2017 /* RDVFourViewController.m in Sources */,
+				8EAD9929199DE4940084943C /* RDVRecommendGoodsTableViewCell.m in Sources */,
 				B465733D1725A24700319236 /* RDVSecondViewController.m in Sources */,
 				B46573401725A25100319236 /* RDVThirdViewController.m in Sources */,
 				B435F4F917396A8D00297C82 /* RDVTabBarItem.m in Sources */,
