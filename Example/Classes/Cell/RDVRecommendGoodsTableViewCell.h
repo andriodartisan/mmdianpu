@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StrikeThroughLabel.h"
 
 @interface RDVRecommendGoodsTableViewCell : UITableViewCell
 
@@ -17,7 +18,7 @@
 @property(strong,nonatomic) UIView *rightView;
 @property(strong,nonatomic) UILabel *titleLabel;
 @property(strong,nonatomic) UILabel *priceLabel;
-@property(strong,nonatomic) UILabel *oldPriceLabel;
+@property(strong,nonatomic) StrikeThroughLabel *oldPriceLabel;
 @property(strong,nonatomic) UILabel *rebateLabel;
 @property(strong,nonatomic) UILabel *scoreLabel;
 @property(strong,nonatomic) UILabel *isbaoyouLabel;

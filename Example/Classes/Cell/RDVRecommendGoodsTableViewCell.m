@@ -7,6 +7,7 @@
 //
 
 #import "RDVRecommendGoodsTableViewCell.h"
+#import "StrikeThroughLabel.h"
 
 @implementation RDVRecommendGoodsTableViewCell
 
@@ -21,7 +22,7 @@
         _view = [[UIView alloc] initWithFrame:CGRectMake(horizontalInterval, verticalInterval, frame.size.width - horizontalInterval*2, 110)];
         
         _goodsImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 100, 100)];
-        [_goodsImageView setImage:[UIImage imageNamed:@"background1"]];
+        [_goodsImageView setImage:[UIImage imageNamed:@"recommend_demo_pic.jpg"]];
         
         _rightView = [[UIView alloc] initWithFrame:CGRectMake(110, 5, frame.size.width - horizontalInterval*2 - 110, 100)];
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width - horizontalInterval*2 - 110 - 5, 40)];
@@ -39,18 +40,21 @@
 //        
 //        label.numberOfLines = 0;
         
-        _titleLabel.text = @"New  Balance新百伦 7427系列新跑鞋";
+        _titleLabel.text = @"2014新款真丝连衣裙韩版女雪纺衫长款裙夏季修身显瘦气质大码女装";
         
-        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 80, 20)];
+        float thirdWidth = (frame.size.width - horizontalInterval*2 - 110 -5)/3;
+        
+        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, thirdWidth, 20)];
         _priceLabel.font = [UIFont systemFontOfSize:14.0];
         _priceLabel.textAlignment = UITextAlignmentLeft;
         _priceLabel.text = @"￥ 99.0";
-        _oldPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 50, 80, 20)];
+        _oldPriceLabel = [[StrikeThroughLabel alloc] initWithFrame:CGRectMake(thirdWidth, 50, thirdWidth, 20)];
         _oldPriceLabel.font = [UIFont systemFontOfSize:14.0];
         _oldPriceLabel.textAlignment = UITextAlignmentLeft;
+        _oldPriceLabel.strikeThroughEnabled = YES;
         _oldPriceLabel.text = @"￥ 199.0";
         
-        float thirdWidth = (frame.size.width - horizontalInterval*2 - 110 -5)/3;
+        
         _rebateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, thirdWidth, 20)];
         _rebateLabel.text = @"5.0折";
         _rebateLabel.textAlignment = UITextAlignmentLeft;

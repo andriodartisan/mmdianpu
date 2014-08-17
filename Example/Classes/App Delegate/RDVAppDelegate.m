@@ -64,7 +64,7 @@
                                                    initWithRootViewController:fourthViewController];
     
     RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
-    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController, thirdNavigationController,
+    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController,
                                            fourthNavigationController]];
     self.viewController = tabBarController;
     
@@ -74,7 +74,7 @@
 - (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
-    NSArray *tabBarItemImages = @[@"first", @"second", @"third", @"third"];
+    NSArray *tabBarItemImages = @[@"first", @"second", @"third"];
     
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {

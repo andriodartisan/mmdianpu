@@ -29,6 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _myArr = @[
+               @[@"我的订单",@"我的分享",@"我的晒单",@"查找订单"],
+               @[@"邀请好友",@"邀请记录",@"邀请收入"],
+               @[@"我的集分宝",@"我的积分"],
+               @[@"我喜欢的",@"我的消息"],
+               @[@"提现设置",@"意见反馈"],
+               ];
+    
     if (self.rdv_tabBarController.tabBar.translucent) {
         UIEdgeInsets insets = UIEdgeInsetsMake(0,
                                                0,
@@ -70,14 +78,30 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    [self configureCell:cell forIndexPath:indexPath];
+//    [self configureCell:cell forIndexPath:indexPath];
+    cell.textLabel.text = [_myArr objectAtIndex:indexPath.section][indexPath.row];
+    [cell.imageView setImage:[UIImage imageNamed:@"bag10_travell"]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 15;
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return _myArr.count;
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [[_myArr objectAtIndex:section] count];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if ([[_myArr objectAtIndex:section] count] > 0) {
+        return 15;
+    }else{
+        return 0;
+    }
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

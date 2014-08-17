@@ -63,7 +63,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[self rdv_tabBarItem] setBadgeValue:@"3"];
+//    [[self rdv_tabBarItem] setBadgeValue:@"3"];
     
     if (self.rdv_tabBarController.tabBar.translucent) {
         UIEdgeInsets insets = UIEdgeInsetsMake(0,
@@ -86,7 +86,7 @@
     
     /* Right bar button item */
     ILBarButtonItem *rightBtn =
-    [ILBarButtonItem barItemWithTitle:@"Start"
+    [ILBarButtonItem barItemWithTitle:@"签到"
                            themeColor:[UIColor redColor]
                                target:self
                                action:@selector(rightTapped:)];
@@ -121,15 +121,16 @@
         return;
     }
     _typesView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
-    _typesView.backgroundColor = [UIColor grayColor];
+    _typesView.backgroundColor = [UIColor whiteColor];
     int btnX = 0;
     int btnY = 0;
     int btnWidth = 320 / 3;
-    int btnHeight = 40;
+    int btnHeight = 45;
     for (int i=0; i < _subClass.count; i++) {
         [[_subClass objectAtIndex:i] objectForKey:@"name"];
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(btnX, btnY, btnWidth, btnHeight)];
         [btn setTitle:[[_subClass objectAtIndex:i] objectForKey:@"name"] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [btn.layer setMasksToBounds:YES];
         [btn.layer setBorderWidth:1.0];
         [btn.layer setBorderColor:(__bridge CGColorRef)([UIColor whiteColor])];
@@ -140,7 +141,7 @@
             btnX = 0;
             btnY += btnHeight;
             UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, btnY, 320, 1)];
-            lineView.backgroundColor = [UIColor greenColor];
+            lineView.backgroundColor = [UIColor colorWithRed:240.0f/255.0f green:231.0f/255.0f blue:228.0f/255.0f alpha:1];
             [_typesView addSubview:lineView];
         }
         [_typesView addSubview:btn];
@@ -150,11 +151,11 @@
     }
     _typesView.frame = CGRectMake(0, 0, 320, btnY);
     UIView *lineY1 = [[UIView alloc] initWithFrame:CGRectMake(320/3, 0, 1, btnY)];
-    lineY1.backgroundColor = [UIColor greenColor];
+    lineY1.backgroundColor = [UIColor colorWithRed:240.0f/255.0f green:231.0f/255.0f blue:228.0f/255.0f alpha:1];
     [_typesView addSubview:lineY1];
     
     UIView *lineY2 = [[UIView alloc] initWithFrame:CGRectMake(320/3 + 1 + 320/3, 0, 1, btnY)];
-    lineY2.backgroundColor = [UIColor greenColor];
+    lineY2.backgroundColor = [UIColor colorWithRed:240.0f/255.0f green:231.0f/255.0f blue:228.0f/255.0f alpha:1];
     [_typesView addSubview:lineY2];
     
     CGRect frame = [self.view convertRect:self.view.bounds toView:nil];
@@ -198,10 +199,10 @@
 }
 
 - (IBAction)rightTapped:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Right button tapped"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"签到成功，成功获取1积分"
                                                     message:nil
                                                    delegate:self
-                                          cancelButtonTitle:@"Great!"
+                                          cancelButtonTitle:@"确定"
                                           otherButtonTitles:nil];
 	[alert show];
 }
@@ -237,7 +238,7 @@
     }
     
 //    [self configureCell:cell forIndexPath:indexPath];
-    cell.rightLable.text = cell.leftLable.text = self.title;
+//    cell.rightTitleLable.text = cell.leftTitleLable.text = self.title;
     return cell;
 }
 
