@@ -113,13 +113,6 @@
     NSDictionary *cate = [self.cates objectAtIndex:1]; //测试用
     _subClass = [cate objectForKey:@"subClass"];
     
-    NSDictionary *dictTitle=[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
-    [self.navigationController.navigationBar setTitleTextAttributes:dictTitle];
-    
-    self.navigationController.navigationBar.translucent=NO;
-    self.navigationController.navigationBar.barTintColor  = [UIColor colorWithRed:242.0f/255.0f green:141.0f/255.0f blue:114.0f/255.0f alpha:1];
-    self.navigationController.navigationBar.backgroundColor  = [UIColor colorWithRed:242.0f/255.0f green:141.0f/255.0f blue:114.0f/255.0f alpha:1];
-    
     NSLog(@" bar tint color %@",self.navigationController.navigationBar.barTintColor);
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

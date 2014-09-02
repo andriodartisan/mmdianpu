@@ -8,6 +8,7 @@
 
 #import "RDVFourViewController.h"
 #import "RDVTabBarController.h"
+#import "TestAnimationViewController.h"
 
 @interface RDVFourViewController ()
 
@@ -105,6 +106,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    TestAnimationViewController *tav = [[TestAnimationViewController alloc] init];
+    [self.navigationController pushViewController:tav animated:YES];
 }
 
 

@@ -271,6 +271,8 @@
 		8EAD9924199DB6760084943C /* RDVGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD9923199DB6760084943C /* RDVGoodsTableViewCell.m */; };
 		8EAD9926199DBD4A0084943C /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EAD9925199DBD4A0084943C /* background1.png */; };
 		8EAD9929199DE4940084943C /* RDVRecommendGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAD9928199DE4940084943C /* RDVRecommendGoodsTableViewCell.m */; };
+		8EC4FC1119B5ACBD000373E0 /* MLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4FC1019B5ACBD000373E0 /* MLNavigationController.m */; };
+		8EC4FC1319B5AF94000373E0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC4FC1219B5AF94000373E0 /* Accelerate.framework */; };
 		8EFD5F6A199B736900AC2017 /* RDVFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD5F69199B736900AC2017 /* RDVFourViewController.m */; };
 		8EFD5F6F199B75C100AC2017 /* ILBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD5F6E199B75C100AC2017 /* ILBarButtonItem.m */; };
 		B407B65B182CCA01006F21A6 /* navigationbar_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B407B659182CCA01006F21A6 /* navigationbar_background.png */; };
@@ -550,6 +552,9 @@
 		8EAD9925199DBD4A0084943C /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = FolderImages/background1.png; sourceTree = "<group>"; };
 		8EAD9927199DE4940084943C /* RDVRecommendGoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVRecommendGoodsTableViewCell.h; sourceTree = "<group>"; };
 		8EAD9928199DE4940084943C /* RDVRecommendGoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVRecommendGoodsTableViewCell.m; sourceTree = "<group>"; };
+		8EC4FC0F19B5ACBD000373E0 /* MLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNavigationController.h; sourceTree = "<group>"; };
+		8EC4FC1019B5ACBD000373E0 /* MLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNavigationController.m; sourceTree = "<group>"; };
+		8EC4FC1219B5AF94000373E0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		8EFD5F68199B736900AC2017 /* RDVFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVFourViewController.h; sourceTree = "<group>"; };
 		8EFD5F69199B736900AC2017 /* RDVFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVFourViewController.m; sourceTree = "<group>"; };
 		8EFD5F6D199B75C100AC2017 /* ILBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILBarButtonItem.h; sourceTree = "<group>"; };
@@ -606,6 +611,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC4FC1319B5AF94000373E0 /* Accelerate.framework in Frameworks */,
 				8E029592199C842A0058A010 /* QuartzCore.framework in Frameworks */,
 				B4616BAF17228DF700863892 /* UIKit.framework in Frameworks */,
 				B4616BB117228DF700863892 /* Foundation.framework in Frameworks */,
@@ -881,9 +887,19 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		8EC4FC0E19B5ACBD000373E0 /* MLNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				8EC4FC0F19B5ACBD000373E0 /* MLNavigationController.h */,
+				8EC4FC1019B5ACBD000373E0 /* MLNavigationController.m */,
+			);
+			path = MLNavigationController;
+			sourceTree = "<group>";
+		};
 		8EFD5F6B199B75C100AC2017 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				8EC4FC0E19B5ACBD000373E0 /* MLNavigationController */,
 				8E82005D19ADD50600181741 /* RDVTabBarController */,
 				8E82004419AD725800181741 /* RefreshTableHeaderView */,
 				8E82004719AD725800181741 /* RefreshTableRootView */,
@@ -968,6 +984,7 @@
 		B4616BAD17228DF700863892 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8EC4FC1219B5AF94000373E0 /* Accelerate.framework */,
 				8E029591199C842A0058A010 /* QuartzCore.framework */,
 				B4616BAE17228DF700863892 /* UIKit.framework */,
 				B4616BB017228DF700863892 /* Foundation.framework */,
@@ -1364,6 +1381,7 @@
 				8E0293CE199C54A50058A010 /* iPhone-small.png in Sources */,
 				8E0293D2199C54A50058A010 /* ILBarButtonItem.h in Sources */,
 				8E0293FE199C6A420058A010 /* FolderCoverView.m in Sources */,
+				8EC4FC1119B5ACBD000373E0 /* MLNavigationController.m in Sources */,
 				8E0293D3199C54A50058A010 /* RDVAppDelegate.h in Sources */,
 				8E0293D6199C54A50058A010 /* RDVFirstViewController.h in Sources */,
 				8E0293D7199C54A50058A010 /* RDVSecondViewController.h in Sources */,

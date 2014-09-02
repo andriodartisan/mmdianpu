@@ -29,6 +29,7 @@
 #import "RDVTabBarController.h"
 #import "RDVTabBarItem.h"
 #import "TestAnimationViewController.h"
+#import "MLNavigationController.h"
 
 @implementation RDVAppDelegate
 
@@ -49,23 +50,27 @@
 
 - (void)setupViewControllers {
     UIViewController *firstViewController = [[RDVFirstViewController alloc] init];
-    UIViewController *firstNavigationController = [[UINavigationController alloc]
+    MLNavigationController *firstNavigationController = [[MLNavigationController alloc]
                                                    initWithRootViewController:firstViewController];
+    [self setNavigationBarBackGroundColor:firstNavigationController];
     
     UIViewController *secondViewController = [[RDVSecondViewController alloc] init];
-    UIViewController *secondNavigationController = [[UINavigationController alloc]
+    MLNavigationController *secondNavigationController = [[MLNavigationController alloc]
                                                     initWithRootViewController:secondViewController];
+    [self setNavigationBarBackGroundColor:secondNavigationController];
     
     UIViewController *thirdViewController = [[RDVThirdViewController alloc] init];
-    UIViewController *thirdNavigationController = [[UINavigationController alloc]
+    MLNavigationController *thirdNavigationController = [[MLNavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
+    [self setNavigationBarBackGroundColor:thirdNavigationController];
     
     UIViewController *fourthViewController = [[RDVFourViewController alloc] init];
-    UIViewController *fourthNavigationController = [[UINavigationController alloc]
+    MLNavigationController *fourthNavigationController = [[MLNavigationController alloc]
                                                    initWithRootViewController:fourthViewController];
+    [self setNavigationBarBackGroundColor:fourthNavigationController];
     
     RDVTabBarController *tabBarController = [[RDVTabBarController alloc] init];
-    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController, [[TestAnimationViewController alloc] init],
+    [tabBarController setViewControllers:@[firstNavigationController, secondNavigationController, thirdNavigationController,
                                            fourthNavigationController]];
     self.viewController = tabBarController;
     
@@ -90,6 +95,11 @@
     }
 }
 
+-(void)setNavigationBarBackGroundColor:(MLNavigationController *) navBar{
+    navBar.navigationBar.translucent=NO;
+    navBar.navigationBar.barTintColor  = [UIColor colorWithRed:150.0f/255.0f green:215.0f/255.0f blue:160.0f/255.0f alpha:1];
+}
+
 - (void)customizeInterface {
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     
@@ -97,27 +107,27 @@
     NSDictionary *textAttributes = nil;
     
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_6_1) {
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background_tall"];
+//        backgroundImage = [UIImage imageNamed:@"navigationbar_background_tall"];
         
         textAttributes = @{
                            NSFontAttributeName: [UIFont boldSystemFontOfSize:18],
-                           NSForegroundColorAttributeName: [UIColor blackColor],
+                           NSForegroundColorAttributeName: [UIColor whiteColor],
                            };
     } else {
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
-        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
+//        backgroundImage = [UIImage imageNamed:@"navigationbar_background"];
         
         textAttributes = @{
                            UITextAttributeFont: [UIFont boldSystemFontOfSize:18],
-                           UITextAttributeTextColor: [UIColor blackColor],
+                           UITextAttributeTextColor: [UIColor whiteColor],
                            UITextAttributeTextShadowColor: [UIColor clearColor],
                            UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetZero],
                            };
 #endif
     }
     
-    [navigationBarAppearance setBackgroundImage:backgroundImage
-                                  forBarMetrics:UIBarMetricsDefault];
+//    [navigationBarAppearance setBackgroundImage:backgroundImage
+//                                  forBarMetrics:UIBarMetricsDefault];
     [navigationBarAppearance setTitleTextAttributes:textAttributes];
 }
 

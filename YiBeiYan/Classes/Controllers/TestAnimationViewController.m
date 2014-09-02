@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor blueColor]];
     // Do any additional setup after loading the view.
     UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
     [imageview setImage:[UIImage imageNamed:@"bag11_double"]];
